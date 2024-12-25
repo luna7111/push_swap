@@ -6,7 +6,7 @@
 #    By: ldel-val <ldel-val@42madrid.com>          |  |           *            #
 #                                                  \  '.___.;       +          #
 #    Created: 2024/11/25 12:45:41 by ldel-val       '._  _.'   .        .      #
-#    Updated: 2024/12/25 21:12:32 by ldel-val          ``                      #
+#    Updated: 2024/12/25 22:35:10 by ldel-val          ``                      #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,8 @@ RM 		:=	rm -f
 #Flags
 MLX		:=	mlx/libmlx.a
 LIBFT	:=	libft/libft.a
-CFLAGS 	:=	-Wall -Wextra -Werror -O3 -Isrc/headers
-LIB 	:=	-Lmlx -lmlx -lXext -lX11 -lm $(LIBFT)
+CFLAGS 	:=	-Wall -Wextra -Werror -O3 -Isrc
+LIB 	:=	$(LIBFT)
 
 #Project stuff 
 
