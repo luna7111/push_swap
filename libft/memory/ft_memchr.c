@@ -1,38 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                    _.._  .           .     */
-/*   get_node.c                                     .' .-'`        *          */
+/*   ft_memchr.c                                    .' .-'`        *          */
 /*                                                 /  /       +        *      */
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
-/*   Created: 2024/12/25 22:40:35 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2024/12/26 16:04:32 by ldel-val          ``                     */
+/*   Created: 2024/10/26 15:42:19 by ldel-val       '._  _.'   .        .     */
+/*   Updated: 2024/10/27 11:39:49 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <push_swap.h>
+#include "../libft.h"
 
-t_stack	*last_node(t_stack *list)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	if (!list)
-		return (NULL);
-	while (list->next)
-		list = list->next;
-	return (list);
-}
+	unsigned char	*match;
 
-t_stack *nth_node(t_stack *node, int index)
-{
-	while (node && index --)
-		node = node->next;
-	return (node);
-}
-
-t_stack *next_to_last_node(t_stack *node)
-{
-	if (!node || !node->next)
-		return (NULL);
-	while (node->next->next)
-		node = node->next;
-	return (node);
+	match = (unsigned char *)s;
+	while (n--)
+		if (*match++ == (unsigned char)c)
+			return (match - 1);
+	return (NULL);
 }

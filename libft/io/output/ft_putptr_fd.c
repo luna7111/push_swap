@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                    _.._  .           .     */
-/*   create_delete.c                                .' .-'`        *          */
+/*   ft_putptr_fd.c                                 .' .-'`        *          */
 /*                                                 /  /       +        *      */
-/*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
+/*   By: ldel-val <ldel-val@student.42madrid.c     |  |           *           */
 /*                                                 \  '.___.;       +         */
-/*   Created: 2024/12/25 22:24:01 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2024/12/26 16:02:53 by ldel-val          ``                     */
+/*   Created: 2024/10/28 16:10:57 by ldel-val       '._  _.'   .        .     */
+/*   Updated: 2024/11/16 16:44:48 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <push_swap.h>
+#include "../../libft.h"
 
-t_stack	*new_node(int nb)
+int	ft_putptr_fd(void *ptr, int fd)
 {
-	t_stack	*node;
-	node = (t_stack *)malloc(sizeof(t_stack));
-	if (!node)
-		return (NULL);
-	node->nb = nb;
-	node->next = NULL;
-	return (node);
-}
+	int	printed_bytes;
 
-void	delete_node(t_stack *node)
-{
-	free(node);
+	if (!ptr)
+		return (write(fd, "(nil)", 5));
+	printed_bytes = write(fd, "0x", 2);
+	printed_bytes += ft_puthex_fd((size_t)ptr, fd);
+	return (printed_bytes);
 }

@@ -6,7 +6,7 @@
 #    By: ldel-val <ldel-val@42madrid.com>          |  |           *            #
 #                                                  \  '.___.;       +          #
 #    Created: 2024/11/25 12:45:41 by ldel-val       '._  _.'   .        .      #
-#    Updated: 2024/12/26 12:25:12 by ldel-val          ``                      #
+#    Updated: 2024/12/26 22:01:40 by ldel-val          ``                      #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ RM 		:=	rm -f
 
 #Flags
 LIBFT	:=	libft/libft.a
-CFLAGS 	:=	-Wall -Wextra -Werror -O3 -Isrc
+CFLAGS 	:=	-Wall -Wextra -Werror -g3 -Isrc
 LIB 	:=	$(LIBFT)
 
 #Project stuff 
@@ -28,7 +28,8 @@ SRC 	:=	src/push_swap.c\
 			src/linked_lists/add_remove.c\
 			src/linked_lists/create_delete.c\
 			src/linked_lists/get_node.c\
-			src/linked_lists/stack_operations.c
+			src/linked_lists/stack_operations.c\
+			src/utils/format.c
 OBJ		:=	$(SRC:.c=.o)
 
 #-----------------------------------------------------------------------------#

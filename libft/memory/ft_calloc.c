@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                    _.._  .           .     */
-/*   get_node.c                                     .' .-'`        *          */
+/*   ft_calloc.c                                    .' .-'`        *          */
 /*                                                 /  /       +        *      */
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
-/*   Created: 2024/12/25 22:40:35 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2024/12/26 16:04:32 by ldel-val          ``                     */
+/*   Created: 2024/10/26 15:39:52 by ldel-val       '._  _.'   .        .     */
+/*   Updated: 2024/10/27 11:39:49 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <push_swap.h>
+#include "../libft.h"
 
-t_stack	*last_node(t_stack *list)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	if (!list)
+	char	*allocated_memory;
+	size_t	i;
+
+	if (size && nmemb > SIZE_MAX / size)
 		return (NULL);
-	while (list->next)
-		list = list->next;
-	return (list);
-}
-
-t_stack *nth_node(t_stack *node, int index)
-{
-	while (node && index --)
-		node = node->next;
-	return (node);
-}
-
-t_stack *next_to_last_node(t_stack *node)
-{
-	if (!node || !node->next)
+	i = size * nmemb;
+	allocated_memory = (char *)malloc(nmemb * size);
+	if (!allocated_memory)
 		return (NULL);
-	while (node->next->next)
-		node = node->next;
-	return (node);
+	while (i-- > 0)
+		allocated_memory[i] = '\0';
+	return (allocated_memory);
 }

@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                    _.._  .           .     */
-/*   get_node.c                                     .' .-'`        *          */
+/*   ft_substr.c                                    .' .-'`        *          */
 /*                                                 /  /       +        *      */
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
-/*   Created: 2024/12/25 22:40:35 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2024/12/26 16:04:32 by ldel-val          ``                     */
+/*   Created: 2024/10/26 15:48:23 by ldel-val       '._  _.'   .        .     */
+/*   Updated: 2024/10/27 11:39:55 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <push_swap.h>
+#include "../libft.h"
 
-t_stack	*last_node(t_stack *list)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	if (!list)
+	char	*substr;
+
+	if (!s)
 		return (NULL);
-	while (list->next)
-		list = list->next;
-	return (list);
-}
-
-t_stack *nth_node(t_stack *node, int index)
-{
-	while (node && index --)
-		node = node->next;
-	return (node);
-}
-
-t_stack *next_to_last_node(t_stack *node)
-{
-	if (!node || !node->next)
+	if (start >= ft_strlen(s))
+		return (ft_calloc(1, sizeof(char)));
+	if (len > ft_strlen(s + start))
+		len = ft_strlen(s + start);
+	substr = (char *)malloc(sizeof(char) * len + 1);
+	if (!substr)
 		return (NULL);
-	while (node->next->next)
-		node = node->next;
-	return (node);
+	ft_strlcpy(substr, ((char *)s) + start, len + 1);
+	return (substr);
 }

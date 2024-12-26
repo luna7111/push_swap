@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                    _.._  .           .     */
-/*   create_delete.c                                .' .-'`        *          */
+/*   ft_putoct_fd.c                                 .' .-'`        *          */
 /*                                                 /  /       +        *      */
-/*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
+/*   By: ldel-val <ldel-val@student.42madrid.c     |  |           *           */
 /*                                                 \  '.___.;       +         */
-/*   Created: 2024/12/25 22:24:01 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2024/12/26 16:02:53 by ldel-val          ``                     */
+/*   Created: 2024/10/28 17:00:39 by ldel-val       '._  _.'   .        .     */
+/*   Updated: 2024/11/16 16:44:40 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <push_swap.h>
+#include "../../libft.h"
 
-t_stack	*new_node(int nb)
+int	ft_putoct_fd(int n, int fd)
 {
-	t_stack	*node;
-	node = (t_stack *)malloc(sizeof(t_stack));
-	if (!node)
-		return (NULL);
-	node->nb = nb;
-	node->next = NULL;
-	return (node);
-}
+	int	printed_bytes;
 
-void	delete_node(t_stack *node)
-{
-	free(node);
+	printed_bytes = 0;
+	if (n >= 8)
+		printed_bytes += ft_putoct_fd(n / 8, fd);
+	n = n % 8;
+	printed_bytes += ft_putchar_fd(n + '0', fd);
+	return (printed_bytes);
 }

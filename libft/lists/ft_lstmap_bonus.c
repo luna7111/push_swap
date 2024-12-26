@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                    _.._  .           .     */
-/*   get_node.c                                     .' .-'`        *          */
+/*   ft_lstmap_bonus.c                              .' .-'`        *          */
 /*                                                 /  /       +        *      */
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
-/*   Created: 2024/12/25 22:40:35 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2024/12/26 16:04:32 by ldel-val          ``                     */
+/*   Created: 2024/10/26 15:41:54 by ldel-val       '._  _.'   .        .     */
+/*   Updated: 2024/10/27 11:40:02 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <push_swap.h>
+#include "../libft.h"
 
-t_stack	*last_node(t_stack *list)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	if (!list)
+	t_list	*head;
+	t_list	*node;
+
+	if (!lst || !f || !del)
 		return (NULL);
-	while (list->next)
-		list = list->next;
-	return (list);
-}
-
-t_stack *nth_node(t_stack *node, int index)
-{
-	while (node && index --)
-		node = node->next;
-	return (node);
-}
-
-t_stack *next_to_last_node(t_stack *node)
-{
-	if (!node || !node->next)
-		return (NULL);
-	while (node->next->next)
-		node = node->next;
-	return (node);
+	head = NULL;
+	while (lst)
+	{
+		node = ft_lstnew(f(lst->content));
+		if (!node)
+		{
+			ft_lstclear(&head, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&head, node);
+		lst = lst->next;
+	}
+	return (head);
 }

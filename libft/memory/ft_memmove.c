@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                    _.._  .           .     */
-/*   get_node.c                                     .' .-'`        *          */
+/*   ft_memmove.c                                   .' .-'`        *          */
 /*                                                 /  /       +        *      */
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
-/*   Created: 2024/12/25 22:40:35 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2024/12/26 16:04:32 by ldel-val          ``                     */
+/*   Created: 2024/10/26 15:42:57 by ldel-val       '._  _.'   .        .     */
+/*   Updated: 2024/10/27 11:39:49 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <push_swap.h>
+#include "../libft.h"
 
-t_stack	*last_node(t_stack *list)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	if (!list)
-		return (NULL);
-	while (list->next)
-		list = list->next;
-	return (list);
-}
+	size_t	i;
 
-t_stack *nth_node(t_stack *node, int index)
-{
-	while (node && index --)
-		node = node->next;
-	return (node);
-}
-
-t_stack *next_to_last_node(t_stack *node)
-{
-	if (!node || !node->next)
-		return (NULL);
-	while (node->next->next)
-		node = node->next;
-	return (node);
+	if (n == 0)
+		return (dest);
+	if (dest < src)
+	{
+		i = 0;
+		while (n--)
+		{
+			((char *)dest)[i] = ((char *)src)[i];
+			i ++;
+		}
+	}
+	else if (dest > src)
+		while (n--)
+			((char *)dest)[n] = ((char *)src)[n];
+	return (dest);
 }
