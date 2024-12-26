@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2024/12/25 23:56:46 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2024/12/26 00:39:03 by ldel-val          ``                     */
+/*   Updated: 2024/12/26 11:21:44 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ void	stack_rotate(t_stack **stack)
 
 void	stack_reverse_rotate(t_stack **stack)
 {
-	t_stack *buffer;
+	t_stack	*buffer;
 
 	if (!stack || !*stack || !*stack->next)
 		return ;
-	buffer = *stack;
-	*stack = last_node(*stack);
-
+	buffer = last_node(*stack);
+	next_to_last_node(*stack)->next = NULL;
+	buffer->next = *stack:
 }
