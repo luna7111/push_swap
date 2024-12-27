@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2024/12/26 12:07:50 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2024/12/26 22:03:51 by ldel-val          ``                     */
+/*   Updated: 2024/12/27 22:53:13 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,24 +32,28 @@ void	parse_argument(t_stack **stack, char *arg)
 	char	**split;
 	int		i;
 
-	(void)stack;
 	i = 0;
 	split = ft_split(arg, ' ');
 	while (split[i])
+		i ++;
+	while (i)
 	{
+		i --;
 		if (!str_is_int(split[i]))
 			error();
-		i ++;
+		node_add_front(stack, new_node(ft_atoi(split[i])));
 	}
 }
 
 int	main(int argn, char **args)
 {
 	t_stack	*stack_a;
-	//t_stack	*stack_b;
+	t_stack	*stack_b;
 
+	stack_a = NULL;
 	while (-- argn)
 		parse_argument(&stack_a, args[argn]);
-
+	print_stack(stack_a);
+	check_stack(stack_a);
 	return (0);
 }
