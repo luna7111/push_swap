@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2024/12/25 21:32:16 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2024/12/26 22:00:33 by ldel-val          ``                     */
+/*   Updated: 2024/12/27 12:01:23 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	delete_node(t_stack *node);
 t_stack *last_node(t_stack *list);
 t_stack *nth_node(t_stack *node, int index);
 t_stack	*next_to_last_node(t_stack *node);
+size_t	stack_size(t_stack *stack);
 
 void	stack_swap(t_stack **stack);
 void	stack_push(t_stack **pusher, t_stack **pushee);
@@ -39,4 +40,6 @@ void	stack_rotate(t_stack **stack);
 void	stack_reverse_rotate(t_stack **stack);
 
 int	str_is_int(char *str);
+
+int	median_of_three(t_stack *stack);
 #endif
