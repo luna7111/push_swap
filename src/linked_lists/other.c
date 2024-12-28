@@ -6,9 +6,11 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2024/12/27 11:12:24 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2024/12/27 14:12:04 by ldel-val          ``                     */
+/*   Updated: 2024/12/28 02:09:21 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <push_swap.h>
 
 size_t	stack_size(t_stack *stack)
 {

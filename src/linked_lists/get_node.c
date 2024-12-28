@@ -6,19 +6,19 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2024/12/25 22:40:35 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2024/12/26 16:04:32 by ldel-val          ``                     */
+/*   Updated: 2024/12/28 00:46:37 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-t_stack	*last_node(t_stack *list)
+t_stack	*last_node(t_stack *stack)
 {
-	if (!list)
+	if (!stack)
 		return (NULL);
-	while (list->next)
-		list = list->next;
-	return (list);
+	while (stack->next)
+		stack = stack->next;
+	return (stack);
 }
 
 t_stack *nth_node(t_stack *node, int index)
