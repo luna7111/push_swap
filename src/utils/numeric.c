@@ -6,17 +6,17 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2024/12/27 11:06:48 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2024/12/27 18:07:47 by ldel-val          ``                     */
+/*   Updated: 2024/12/28 02:13:11 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-t_stack	median_of_three(t_stack *stack, t_stack *start, t_stack *end)
+t_stack	*median_of_three(t_stack *start, t_stack *end)
 {
 	t_stack	*middle;
 
-	middle = nth_node((node_position(end) - node_position(start)) / 2);
+	middle = nth_node(start, (stack_size(start) / 2));
 	if (start->nb > middle->nb && start->nb < end->nb)
 		return (start);
 	if (start->nb < middle->nb && start->nb > end->nb)
