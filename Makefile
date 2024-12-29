@@ -6,7 +6,7 @@
 #    By: ldel-val <ldel-val@42madrid.com>          |  |           *            #
 #                                                  \  '.___.;       +          #
 #    Created: 2024/11/25 12:45:41 by ldel-val       '._  _.'   .        .      #
-#    Updated: 2024/12/28 02:13:54 by ldel-val          ``                      #
+#    Updated: 2024/12/29 18:00:03 by ldel-val          ``                      #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ LIB 	:=	$(LIBFT)
 
 NAME 	:=	push_swap
 SRC 	:=	src/push_swap.c\
-			src/sort.c\
+			src/quick_sort.c\
 			src/check.c\
 			src/linked_lists/add_remove.c\
 			src/linked_lists/create_delete.c\
