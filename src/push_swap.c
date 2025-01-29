@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/01/29 17:00:19 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/01/29 17:32:57 by ldel-val          ``                     */
+/*   Updated: 2025/01/29 17:52:11 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,12 @@ t_stack *populate_stack(int argn, char **argv)
 {
 	t_stack *head;
 	char 	**split_argument;
-	int		current_arg;
 	int		i;
 
-	current_arg = 1;
 	i = 0;
-	while (current_arg < argn)
+	while (--argn)
 	{
-		split_argument = ft_split(argv[current_arg], ' ');
+		split_argument = ft_split(argv[argn], ' ');
 		while (split_argument[i])
 			i++;
 		while (i--)
@@ -45,9 +43,19 @@ t_stack *populate_stack(int argn, char **argv)
 				error(-1);
 			node_add_front(&head, new_node(ft_atoi(split_argument[i])));
 		}
-		current_arg++;
 	}
 	return (head);
+}
+
+void	print_hole_stack(t_stack *stack)
+{
+	ft_printf("Hole stack:\n\n");
+	while (stack != NULL)
+	{
+		ft_printf("%d\n", stack->nb);
+		stack = stack->next;
+	}
+	ft_printf("\nend\n\n");
 }
 
 int	main(int argn, char **argv)
@@ -55,6 +63,5 @@ int	main(int argn, char **argv)
 	t_stack	*head_a;
 
 	head_a = populate_stack(argn, argv);
-	ft_printf("%p", head_a);
-	//print_hole_stack(head_a);
+	print_hole_stack(head_a);
 }
