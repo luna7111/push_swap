@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/11 22:20:55 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/11 22:26:49 by ldel-val          ``                     */
+/*   Updated: 2025/02/12 00:05:30 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	print_op(int operation)
 	else if (operation == SS)
 		ft_printf("ss\n");
 	else if (operation == PA)
-		ft_printf("PA\n");
+		ft_printf("pa\n");
 	else if (operation == PB)
 		ft_printf("pb\n");
 	else if (operation == RA)
@@ -38,11 +38,55 @@ void	print_op(int operation)
 		ft_printf("rrr\n");
 }
 
+int	check_fighting(t_oplst *list)
+{
+	if (list->op == RA && list->next->op == RRA)
+		return (1);
+	if (list->op == RB && list->next->op == RRB)
+		return (1);
+	if (list->op == RRA && list->next->op == RA)
+		return (1);
+	if (list->op == RRB && list->next->op == RB)
+		return (1);
+	if (list->op == PB && list->next->op == PA)
+		return (1);
+	if (list->op == PA && list->next->op == PB)
+		return (1);
+	return (0);
+}
+
+int	check_redundant(t_oplst *list)
+{
+	if (list->op == SA && list->next->op == SB)
+		return (SS);
+	if (list->op == SB && list->next->op == SA)
+		return (SS);
+	if (list->op == RA && list->next->op == RB)
+		return (RR);
+	if (list->op == RRA && list->next->op == RRB)
+		return (RRR);
+	return (0);
+}
+
 void	print_list(t_oplst *list)
 {
 	while (list != NULL)
 	{
-		print_op(list->op);
-		list = list->next;
+		if (check_fighting(list))
+		{
+			list = list->next;
+			list = list->next;
+		}
+		else if (check_redundant(list))
+		{
+			print_op(check_redundant(list));
+			list = list->next;
+			list = list->next;
+		}
+		else
+		{
+			print_op(list->op);
+			list = list->next;
+		}
 	}
 }
