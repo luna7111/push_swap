@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/11 18:48:42 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/11 22:15:59 by ldel-val          ``                     */
+/*   Updated: 2025/02/11 22:34:59 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,9 @@ void	stack_reverse_rotate(t_stack **stack);
 // |_add.c
 void	add_op(t_oplst **list, int op_nb);
 // |_clear.c
+void	del_op(t_oplst **operation);
 void	clear_oplst(t_oplst **list);
+// |_print.c
+void	print_list(t_oplst *list);
 
 #endif
