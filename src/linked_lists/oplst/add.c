@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/11 20:44:17 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/11 21:56:12 by ldel-val          ``                     */
+/*   Updated: 2025/02/11 22:05:18 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	add_op(t_oplst **list, int op_nb)
 	node = new_op(op_nb);
 	if (!node)
 		return ;
-	if (!list)
+	if (!*list)
 	{
 		node->next = *list;
 		*list = node;
