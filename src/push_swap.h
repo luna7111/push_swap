@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/11 18:48:42 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/11 18:51:32 by ldel-val          ``                     */
+/*   Updated: 2025/02/11 18:55:21 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,13 @@
 # define RRA 9
 # define RRB 10
 # define RRR 11
+
+typedef struct s_stack
+{
+	int				nb;
+	int				index;
+	long			block;
+	struct s_stack	*next;
+}	t_stack;
 
 #endif
