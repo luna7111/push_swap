@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/11 19:22:53 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/11 19:24:17 by ldel-val          ``                     */
+/*   Updated: 2025/02/11 19:49:17 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,11 @@ t_stack	*last_node(t_stack *stack)
 	while (stack->next)
 		stack = stack->next;
 	return (stack);
+}
+
+t_stack	*nth_node(t_stack *node, int index)
+{
+	while (node && index --)
+		node = node->next;
+	return (node);
 }
