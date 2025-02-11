@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/11 19:51:53 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/11 19:56:30 by ldel-val          ``                     */
+/*   Updated: 2025/02/11 20:07:04 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_stack	*new_node(int nb)
 
 void	delete_node(t_stack **node)
 {
-	t_stack *next;
+	t_stack	*next;
 
 	next = (*node)->next;
 	free(*node);
