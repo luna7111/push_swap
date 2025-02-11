@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/11 20:44:17 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/11 21:52:29 by ldel-val          ``                     */
+/*   Updated: 2025/02/11 21:56:12 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_oplst	*new_op(int op_nb)
 
 	node = (t_oplst *)malloc(sizeof(t_oplst));
 	if (!node)
-		return (NULL)
+		return (NULL);
 	node->op = op_nb;
 	node->next = NULL;
 	return (node);
