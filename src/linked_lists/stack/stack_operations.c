@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/11 19:59:08 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/11 20:09:04 by ldel-val          ``                     */
+/*   Updated: 2025/02/11 20:10:23 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,16 @@ void	stack_push(t_stack **pusher, t_stack **pushee)
 	buffer = *pusher;
 	*pusher = (*pusher)->next;
 	node_add_front(pushee, buffer);
+}
+
+void	stack_rotate(t_stack **stack)
+{
+	t_stack	*buffer;
+
+	if (!stack || !*stack || !(*stack)->next)
+		return ;
+	last_node(*stack)->next = *stack;
+	buffer = *stack;
+	*stack = (*stack)->next;
+	buffer->next = NULL;
 }
