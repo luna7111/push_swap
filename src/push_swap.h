@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/11 18:48:42 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/11 19:05:21 by ldel-val          ``                     */
+/*   Updated: 2025/02/11 22:15:59 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,32 @@ typedef struct s_stack
 typedef struct s_oplst
 {
 	int				op;
-	struct	s_oplst	*next;
+	struct s_oplst	*next;
 }	t_oplst;
+
+//linked_lists
+//|_stack
+// |_add_remove.c
+void	stack_add_front(t_stack **stack, t_stack *node);
+void	stack_add_back(t_stack **stack, t_stack *node);
+// |_create_delete.c
+t_stack	*new_node(int nb);
+void	*delete_node(t_stack *node);
+// |_node_access.c
+t_stack	*last_node(t_stack *stack);
+t_stack	*nth_node(t_stack *node, int index);
+// |_other.c
+long	stack_size(t_stack *stack);
+long	node_position(t_stack *stack);
+// |_stack_operations.c
+void	stack_swap(t_stack **stack);
+void	stack_push(t_stack **pusher, t_stack **pushee);
+void	stack_rotate(t_stack **stack);
+void	stack_reverse_rotate(t_stack **stack);
+//|_oplst
+// |_add.c
+void	add_op(t_oplst **list, int op_nb);
+// |_clear.c
+void	clear_oplst(t_oplst **list);
 
 #endif
