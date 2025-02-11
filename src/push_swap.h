@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/11 18:48:42 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/11 18:55:21 by ldel-val          ``                     */
+/*   Updated: 2025/02/11 19:05:21 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,11 @@ typedef struct s_stack
 	long			block;
 	struct s_stack	*next;
 }	t_stack;
+
+typedef struct s_oplst
+{
+	int				op;
+	struct	s_oplst	*next;
+}	t_oplst;
 
 #endif
