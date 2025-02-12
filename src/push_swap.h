@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/11 18:48:42 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/12 12:18:20 by ldel-val          ``                     */
+/*   Updated: 2025/02/12 13:11:22 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ void	stack_add_back(t_stack **stack, t_stack *node);
 t_stack	*new_node(int nb);
 void	delete_node(t_stack **node);
 // |_node_access.c
+t_stack	*biggest_node(t_stack *stack);
+t_stack	*smallest_node(t_stack *stack);
 t_stack	*last_node(t_stack *stack);
 t_stack	*nth_node(t_stack *node, int index);
 t_stack	*next_to_last_node(t_stack *node);
@@ -77,7 +79,7 @@ void	error(t_stack **stack, char **split);
 int		stack_is_sorted(t_stack *stack);
 
 //populate.c
-t_stack *populate_stack(int argn, char **argv);
+t_stack	*populate_stack(int argn, char **argv);
 
 //operations
 void	o_pa(t_stack **stack_a, t_stack **stack_b, t_oplst **oplst);
@@ -94,6 +96,5 @@ void	o_rr(t_stack **stack_a, t_stack **stack_b, t_oplst **oplst);
 void	o_sa(t_stack **stack, t_oplst **oplst);
 void	o_sb(t_stack **stack, t_oplst **oplst);
 void	o_ss(t_stack **stack_a, t_stack **stack_b, t_oplst **oplst);
-
 
 #endif

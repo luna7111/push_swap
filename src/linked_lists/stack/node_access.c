@@ -6,11 +6,41 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/11 19:22:53 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/12 01:00:09 by ldel-val          ``                     */
+/*   Updated: 2025/02/12 13:09:01 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
+
+t_stack	*biggest_node(t_stack *stack)
+{
+	t_stack	*biggest;
+
+	biggest = stack;
+	stack = stack->next;
+	while (stack != NULL)
+	{
+		if (stack->nb > biggest->nb)
+			biggest = stack;
+		stack = stack->next;
+	}
+	return (biggest);
+}
+
+t_stack	*smallest_node(t_stack *stack)
+{
+	t_stack	*smallest;
+
+	smallest = stack;
+	stack = stack->next;
+	while (stack != NULL)
+	{
+		if (stack->nb < smallest->nb)
+			smallest = stack;
+		stack = stack->next;
+	}
+	return (smallest);
+}
 
 t_stack	*last_node(t_stack *stack)
 {
