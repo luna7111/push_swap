@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/12 10:17:21 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/12 12:17:58 by ldel-val          ``                     */
+/*   Updated: 2025/02/12 12:25:41 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ int	argument_is_valid(char *arg, t_stack *stack)
 	while (stack != NULL)
 	{
 		if (ft_atoi(arg) == stack->nb)
+		{
+			free(ideal);
 			return (0);
+		}
 		stack = stack->next;
 	}
 	free(ideal);
