@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/11 18:48:42 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/12 11:23:07 by ldel-val          ``                     */
+/*   Updated: 2025/02/12 12:18:20 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ void	stack_swap(t_stack **stack);
 void	stack_push(t_stack **pusher, t_stack **pushee);
 void	stack_rotate(t_stack **stack);
 void	stack_reverse_rotate(t_stack **stack);
+// |_clean.c
+void	clear_stack(t_stack **stack);
 //|_oplst
 // |_add.c
 void	add_op(t_oplst **list, int op_nb);
@@ -71,7 +73,7 @@ void	clear_oplst(t_oplst **list);
 void	print_list(t_oplst *list);
 
 //aux.c
-void	error(void);
+void	error(t_stack **stack, char **split);
 int		stack_is_sorted(t_stack *stack);
 
 //populate.c
