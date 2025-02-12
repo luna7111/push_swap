@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/12 10:17:21 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/12 10:48:51 by ldel-val          ``                     */
+/*   Updated: 2025/02/12 11:25:14 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ t_stack *populate_stack(int argn, char **argv)
 			i++;
 		while (i--)
 		{
-			if (!argument_is_valid(split_argument[i]), head)
+			if (!argument_is_valid(split_argument[i], head))
 				error();
-			node_add_front(&head, new_node, ft_atoi(split_argument[i]))
+			stack_add_front(&head, new_node(ft_atoi(split_argument[i])));
 		}
 		free_strarray(split_argument);
 	}
