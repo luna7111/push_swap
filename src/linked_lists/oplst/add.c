@@ -6,13 +6,13 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/11 20:44:17 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/11 22:05:18 by ldel-val          ``                     */
+/*   Updated: 2025/02/12 01:12:37 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-t_oplst *last_op(t_oplst *list)
+t_oplst	*last_op(t_oplst *list)
 {
 	if (!list)
 		return (NULL);
@@ -35,7 +35,7 @@ t_oplst	*new_op(int op_nb)
 
 void	add_op(t_oplst **list, int op_nb)
 {
-	t_oplst *node;
+	t_oplst	*node;
 
 	node = new_op(op_nb);
 	if (!node)
