@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/12 13:30:31 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/12 14:04:31 by ldel-val          ``                     */
+/*   Updated: 2025/02/12 18:04:10 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ void	sort_first_three_p2(t_stack **st_a, t_stack **st_b, t_oplst **oplst)
 	else
 	{
 		o_pb(st_a, st_b, oplst);
-		o_sa(st_a);
+		o_sa(st_a, oplst);
 		o_pa(st_a, st_b, oplst);
-		o_sa(st_a);
+		o_sa(st_a, oplst);
 	}
 }
 
