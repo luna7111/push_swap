@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/11 18:48:42 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/12 01:01:30 by ldel-val          ``                     */
+/*   Updated: 2025/02/12 10:16:03 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,9 @@ void	clear_oplst(t_oplst **list);
 // |_print.c
 void	print_list(t_oplst *list);
 
+//aux.c
+void	error(void);
+
 //operations
 void	o_pa(t_stack **stack_a, t_stack **stack_b, t_oplst **oplst);
 void	o_pb(t_stack **stack_a, t_stack **stack_b, t_oplst **oplst);
@@ -85,5 +88,6 @@ void	o_rr(t_stack **stack_a, t_stack **stack_b, t_oplst **oplst);
 void	o_sa(t_stack **stack, t_oplst **oplst);
 void	o_sb(t_stack **stack, t_oplst **oplst);
 void	o_ss(t_stack **stack_a, t_stack **stack_b, t_oplst **oplst);
+
 
 #endif
