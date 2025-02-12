@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/11 20:13:53 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/11 20:31:15 by ldel-val          ``                     */
+/*   Updated: 2025/02/12 00:55:12 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,5 @@ long	node_position(t_stack *stack, t_stack *node)
 		position ++;
 		stack = stack->next;
 	}
+	return (position);
 }

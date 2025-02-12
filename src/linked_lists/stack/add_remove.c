@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/11 19:17:09 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/11 21:05:57 by ldel-val          ``                     */
+/*   Updated: 2025/02/12 00:52:16 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	stack_add_front(t_stack **stack, t_stack *node)
 
 void	stack_add_back(t_stack **stack, t_stack *node)
 {
-	if (!list)
+	if (!stack)
 		stack_add_front(stack, node);
 	else if (node)
 		last_node(*stack)->next = node;
