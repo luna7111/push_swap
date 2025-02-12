@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/11 18:48:42 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/12 14:07:16 by ldel-val          ``                     */
+/*   Updated: 2025/02/12 17:57:19 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,13 +77,20 @@ void	print_list(t_oplst *list);
 //aux.c
 void	error(t_stack **stack, char **split);
 int		stack_is_sorted(t_stack *stack);
+void	indexize_stack(t_stack *stack);
+double	block_average(t_stack *stack);
 
 //populate.c
 t_stack	*populate_stack(int argn, char **argv);
 
 //sort_small_stack.c
 void	sort_three(t_stack **st_a, t_oplst **oplst);
-void	sort_firts_three(t_stack **st_a, t_stack **st_b, t_oplst **oplst);
+void	sort_first_three(t_stack **st_a, t_stack **st_b, t_oplst **oplst);
+
+//complex_operations.c
+void	block_push_a(t_stack **st_a, t_stack **st_b, long *blk, t_oplst **olst);
+void	block_push_b(t_stack **st_a, t_stack **st_b, long *blk, t_oplst **olst);
+void	chop_push(t_stack **st_a, t_stack **st_b, long *blk_nb, t_oplst **olst);
 
 //operations
 void	o_pa(t_stack **stack_a, t_stack **stack_b, t_oplst **oplst);
