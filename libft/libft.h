@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2024/10/26 15:49:52 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2024/11/16 19:22:59 by ldel-val          ``                     */
+/*   Updated: 2025/02/12 10:36:08 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,8 @@ long	ft_find_lbreak(char *string);
 
 int		ft_print_specifier(char const *format, va_list arguments);
 int		ft_printf(char const *format, ...);
+
+void	free_strarray(char **array);
 
 typedef struct s_list
 {
