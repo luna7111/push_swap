@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/11 18:48:42 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/12 13:11:22 by ldel-val          ``                     */
+/*   Updated: 2025/02/12 14:07:16 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,10 @@ int		stack_is_sorted(t_stack *stack);
 
 //populate.c
 t_stack	*populate_stack(int argn, char **argv);
+
+//sort_small_stack.c
+void	sort_three(t_stack **st_a, t_oplst **oplst);
+void	sort_firts_three(t_stack **st_a, t_stack **st_b, t_oplst **oplst);
 
 //operations
 void	o_pa(t_stack **stack_a, t_stack **stack_b, t_oplst **oplst);
