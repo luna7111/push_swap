@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/12 10:05:38 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/12 17:26:17 by ldel-val          ``                     */
+/*   Updated: 2025/02/16 12:31:32 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,15 +59,13 @@ void	indexize_stack(t_stack *stack)
 	}
 }
 
-double	block_average(t_stack *stack)
+double	block_average(t_stack *stack, long block)
 {
-	int		block;
 	double	block_size;
 	double	average;
 
 	block_size = 0;
 	average = 0;
-	block = stack->block;
 	while (stack != NULL)
 	{
 		if (stack->block == block)
@@ -78,4 +76,10 @@ double	block_average(t_stack *stack)
 		stack = stack->next;
 	}
 	return ((float)average / block_size);
+}
+
+double	next_block(long *blk, double pv)
+{
+	(*blk)++;
+	return (pv);
 }

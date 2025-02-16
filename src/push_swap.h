@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/11 18:48:42 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/12 17:57:19 by ldel-val          ``                     */
+/*   Updated: 2025/02/16 12:31:41 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,14 @@ t_stack	*smallest_node(t_stack *stack);
 t_stack	*last_node(t_stack *stack);
 t_stack	*nth_node(t_stack *node, int index);
 t_stack	*next_to_last_node(t_stack *node);
+// |_block_acess.c
+t_stack	*biggest_in_block(t_stack *stack);
+t_stack	*smallest_in_block(t_stack *stack);
 // |_other.c
+int		only_block(t_stack *stack);
 long	stack_size(t_stack *stack);
 long	node_position(t_stack *stack, t_stack *node);
+int		block_ocurrences(t_stack *stack, long blk);
 // |_stack_operations.c
 void	stack_swap(t_stack **stack);
 void	stack_push(t_stack **pusher, t_stack **pushee);
@@ -78,7 +83,8 @@ void	print_list(t_oplst *list);
 void	error(t_stack **stack, char **split);
 int		stack_is_sorted(t_stack *stack);
 void	indexize_stack(t_stack *stack);
-double	block_average(t_stack *stack);
+double	block_average(t_stack *stack, long block);
+double	next_block(long *blk, double pv);
 
 //populate.c
 t_stack	*populate_stack(int argn, char **argv);
@@ -88,8 +94,12 @@ void	sort_three(t_stack **st_a, t_oplst **oplst);
 void	sort_first_three(t_stack **st_a, t_stack **st_b, t_oplst **oplst);
 
 //complex_operations.c
+void	o_pa_blk(t_stack **st_a, t_stack **st_b, t_oplst **oplst, long blk);
+void	o_pb_blk(t_stack **st_a, t_stack **st_b, t_oplst **oplst, long blk);
 void	block_push_a(t_stack **st_a, t_stack **st_b, long *blk, t_oplst **olst);
 void	block_push_b(t_stack **st_a, t_stack **st_b, long *blk, t_oplst **olst);
+
+//chop_push.c
 void	chop_push(t_stack **st_a, t_stack **st_b, long *blk_nb, t_oplst **olst);
 
 //operations

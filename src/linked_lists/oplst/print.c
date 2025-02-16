@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/11 22:20:55 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/12 00:05:30 by ldel-val          ``                     */
+/*   Updated: 2025/02/12 23:34:00 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ void	print_op(int operation)
 
 int	check_fighting(t_oplst *list)
 {
+	if (list->next == NULL)
+		return (0);
 	if (list->op == RA && list->next->op == RRA)
 		return (1);
 	if (list->op == RB && list->next->op == RRB)
@@ -57,6 +59,8 @@ int	check_fighting(t_oplst *list)
 
 int	check_redundant(t_oplst *list)
 {
+	if (list->next == NULL)
+		return (0);
 	if (list->op == SA && list->next->op == SB)
 		return (SS);
 	if (list->op == SB && list->next->op == SA)

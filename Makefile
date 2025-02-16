@@ -6,7 +6,7 @@
 #    By: ldel-val <ldel-val@42madrid.com>          |  |           *            #
 #                                                  \  '.___.;       +          #
 #    Created: 2024/11/25 12:45:41 by ldel-val       '._  _.'   .        .      #
-#    Updated: 2025/02/12 23:22:33 by ldel-val          ``                      #
+#    Updated: 2025/02/16 11:06:19 by ldel-val          ``                      #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,12 +29,14 @@ SRC 	:=	src/push_swap.c\
 			src/populate.c\
 			src/sort_small_stack.c\
 			src/complex_operations.c\
+			src/chop_push.c\
 			src/linked_lists/oplst/add.c\
 			src/linked_lists/oplst/clear.c\
 			src/linked_lists/oplst/print.c\
 			src/linked_lists/stack/add_remove.c\
 			src/linked_lists/stack/create_delete.c\
 			src/linked_lists/stack/node_access.c\
+			src/linked_lists/stack/block_access.c\
 			src/linked_lists/stack/other.c\
 			src/linked_lists/stack/clean.c\
 			src/linked_lists/stack/stack_operations.c\
