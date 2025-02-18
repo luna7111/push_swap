@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/17 17:35:41 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/18 17:44:01 by ldel-val          ``                     */
+/*   Updated: 2025/02/18 20:24:25 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,20 @@ int	argument_is_valid(char *arg, t_stack *stack)
 	len = ft_strlen(arg);
 	number = ft_atoi(arg);
 	ideal = ft_itoa(number);
-	if (ft_strncmp(ideal, arg, len) && ft_strncmp(ideal, &arg[1], len - 1))
+	if (*arg == '+')
+		arg ++;
+	if (ft_strncmp(ideal, arg, len))
 	{
 		free(ideal);
 		return (0);
 	}
+	free(ideal);
 	while (stack != NULL)
 	{
 		if (number == stack->nb)
-		{
-			free(ideal);
 			return (0);
-		}
 		stack = stack->nx;
 	}
-	free(ideal);
 	return (1);
 }
 

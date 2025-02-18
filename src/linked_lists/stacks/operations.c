@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/17 15:08:54 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/18 17:41:53 by ldel-val          ``                     */
+/*   Updated: 2025/02/18 18:37:16 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void	stack_push(t_stack **pusher, t_stack **pushee)
 {
 	t_stack	*buffer;
 
+	if (*pusher == NULL)
+		return ;
 	buffer = (*pusher);
 	*pusher = (*pusher)->nx;
 	if (*pusher)

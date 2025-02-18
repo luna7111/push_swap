@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/16 16:06:16 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/18 17:41:07 by ldel-val          ``                     */
+/*   Updated: 2025/02/18 18:22:05 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ void	stack_rotate(t_stack **stack);
 void	stack_reverse_rotate(t_stack **stack);
 void	clear_stack(t_stack **stack);
 t_stack	*populate(int argn, char **argv);
+int		stack_is_ordered(t_stack *stack);
 void	indexize(t_stack *stack);
 int		stack_length(t_stack *stack);
 
