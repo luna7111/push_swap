@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                    _.._  .           .     */
-/*   clear.c                                        .' .-'`        *          */
+/*   swap.c                                         .' .-'`        *          */
 /*                                                 /  /       +        *      */
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
-/*   Created: 2025/02/16 16:42:10 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/17 17:01:51 by ldel-val          ``                     */
+/*   Created: 2025/02/17 19:05:22 by ldel-val       '._  _.'   .        .     */
+/*   Updated: 2025/02/17 19:06:05 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-void	del_op(t_oplst **operation)
+void	o_sa(t_stack **stack, t_oplst **oplst)
 {
-	t_oplst	*nx;
-
-	nx = (*operation)->nx;
-	free(*operation);
-	*operation = nx;
+	stack_swap(stack);
+	add_op(oplst, SA);
 }
 
-void	clear_oplst(t_oplst **list)
+void	o_sb(t_stack **stack, t_oplst **oplst)
 {
-	while (*list != NULL)
-		del_op(list);
+	stack_swap(stack);
+	add_op(oplst, SB);
+}
+
+void	o_ss(t_stack **stack_a, t_stack **stack_b, t_oplst **oplst)
+{
+	stack_swap(stack_a);
+	stack_swap(stack_b);
+	add_op(oplst, SS);
 }

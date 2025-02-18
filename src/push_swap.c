@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                    _.._  .           .     */
-/*   clear.c                                        .' .-'`        *          */
+/*   push_swap.c                                    .' .-'`        *          */
 /*                                                 /  /       +        *      */
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
-/*   Created: 2025/02/16 16:42:10 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/17 17:01:51 by ldel-val          ``                     */
+/*   Created: 2025/02/17 16:46:22 by ldel-val       '._  _.'   .        .     */
+/*   Updated: 2025/02/18 16:07:04 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-void	del_op(t_oplst **operation)
+int	main(int argn, char **argv)
 {
-	t_oplst	*nx;
+	t_stack	*st_a;
+	t_stack	*st_b;
+	t_oplst	*oplst;
 
-	nx = (*operation)->nx;
-	free(*operation);
-	*operation = nx;
-}
-
-void	clear_oplst(t_oplst **list)
-{
-	while (*list != NULL)
-		del_op(list);
+	st_b = NULL;
+	oplst = NULL;
+	st_a = populate(argn, argv);
+	indexize(st_a);
+	sort(&st_a, &st_b, &oplst);
+	clear_stack(&st_a);
+	print_list(oplst);
+	clear_oplst(&oplst);
 }

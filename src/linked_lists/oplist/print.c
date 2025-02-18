@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/11 22:20:55 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/16 16:44:23 by ldel-val          ``                     */
+/*   Updated: 2025/02/17 17:02:27 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,34 +40,34 @@ void	print_op(int operation)
 
 int	check_fighting(t_oplst *list)
 {
-	if (list->next == NULL)
+	if (list->nx == NULL)
 		return (0);
-	if (list->op == RA && list->next->op == RRA)
+	if (list->op == RA && list->nx->op == RRA)
 		return (1);
-	if (list->op == RB && list->next->op == RRB)
+	if (list->op == RB && list->nx->op == RRB)
 		return (1);
-	if (list->op == RRA && list->next->op == RA)
+	if (list->op == RRA && list->nx->op == RA)
 		return (1);
-	if (list->op == RRB && list->next->op == RB)
+	if (list->op == RRB && list->nx->op == RB)
 		return (1);
-	if (list->op == PB && list->next->op == PA)
+	if (list->op == PB && list->nx->op == PA)
 		return (1);
-	if (list->op == PA && list->next->op == PB)
+	if (list->op == PA && list->nx->op == PB)
 		return (1);
 	return (0);
 }
 
 int	check_redundant(t_oplst *list)
 {
-	if (list->next == NULL)
+	if (list->nx == NULL)
 		return (0);
-	if (list->op == SA && list->next->op == SB)
+	if (list->op == SA && list->nx->op == SB)
 		return (SS);
-	if (list->op == SB && list->next->op == SA)
+	if (list->op == SB && list->nx->op == SA)
 		return (SS);
-	if (list->op == RA && list->next->op == RB)
+	if (list->op == RA && list->nx->op == RB)
 		return (RR);
-	if (list->op == RRA && list->next->op == RRB)
+	if (list->op == RRA && list->nx->op == RRB)
 		return (RRR);
 	return (0);
 }
@@ -78,19 +78,19 @@ void	print_list(t_oplst *list)
 	{
 		if (check_fighting(list))
 		{
-			list = list->next;
-			list = list->next;
+			list = list->nx;
+			list = list->nx;
 		}
 		else if (check_redundant(list))
 		{
 			print_op(check_redundant(list));
-			list = list->next;
-			list = list->next;
+			list = list->nx;
+			list = list->nx;
 		}
 		else
 		{
 			print_op(list->op);
-			list = list->next;
+			list = list->nx;
 		}
 	}
 }

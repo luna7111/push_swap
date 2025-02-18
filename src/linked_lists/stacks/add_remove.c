@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                    _.._  .           .     */
-/*   clear.c                                        .' .-'`        *          */
+/*   add_remove.c                                   .' .-'`        *          */
 /*                                                 /  /       +        *      */
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
-/*   Created: 2025/02/16 16:42:10 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/17 17:01:51 by ldel-val          ``                     */
+/*   Created: 2025/02/17 14:22:31 by ldel-val       '._  _.'   .        .     */
+/*   Updated: 2025/02/17 17:18:42 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-void	del_op(t_oplst **operation)
+void	stack_add_front(t_stack **stack, t_stack *node)
 {
-	t_oplst	*nx;
-
-	nx = (*operation)->nx;
-	free(*operation);
-	*operation = nx;
+	if (node)
+	{
+		node->nx = *stack;
+		node->pr = NULL;
+		*stack = node;
+		if (node->nx)
+			node->nx->pr = node;
+	}
 }
 
-void	clear_oplst(t_oplst **list)
+void	stack_add_back(t_stack **stack, t_stack *node)
 {
-	while (*list != NULL)
-		del_op(list);
+	if (!*stack)
+		stack_add_front(stack, node);
+	else if (node)
+	{
+		node->pr = last_node(*stack);
+		last_node(*stack)->nx = node;
+		node->nx = NULL;
+	}
 }

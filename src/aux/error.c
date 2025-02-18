@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                    _.._  .           .     */
-/*   clear.c                                        .' .-'`        *          */
+/*   error.c                                        .' .-'`        *          */
 /*                                                 /  /       +        *      */
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
-/*   Created: 2025/02/16 16:42:10 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/17 17:01:51 by ldel-val          ``                     */
+/*   Created: 2025/02/17 18:06:55 by ldel-val       '._  _.'   .        .     */
+/*   Updated: 2025/02/17 18:17:30 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-void	del_op(t_oplst **operation)
+void	error(t_stack **stack, char **split)
 {
-	t_oplst	*nx;
-
-	nx = (*operation)->nx;
-	free(*operation);
-	*operation = nx;
-}
-
-void	clear_oplst(t_oplst **list)
-{
-	while (*list != NULL)
-		del_op(list);
+	clear_stack(stack);
+	free_strarray(split);
+	write(STDERR, "Error\n", 6);
+	exit(0);
 }

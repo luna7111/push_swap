@@ -6,7 +6,7 @@
 /*   By: ldel-val <ldel-val@student.42madrid.com>  |  |           *           */
 /*                                                 \  '.___.;       +         */
 /*   Created: 2025/02/16 16:28:40 by ldel-val       '._  _.'   .        .     */
-/*   Updated: 2025/02/16 16:41:22 by ldel-val          ``                     */
+/*   Updated: 2025/02/17 17:00:04 by ldel-val          ``                     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ t_oplst	*last_op(t_oplst *list)
 {
 	if (!list)
 		return (NULL);
-	while (list->next)
-		list = list->next;
+	while (list->nx)
+		list = list->nx;
 	return (list);
 }
 
@@ -29,7 +29,7 @@ t_oplst	*new_op(int op_nb)
 	if (!node)
 		return (NULL);
 	node->op = op_nb;
-	node->next = NULL;
+	node->nx = NULL;
 	return (node);
 }
 
@@ -42,9 +42,9 @@ void	add_op(t_oplst **list, int op_nb)
 		return ;
 	if (!*list)
 	{
-		node->next = *list;
+		node->nx = *list;
 		*list = node;
 	}
 	else
-		last_op(*list)->next = node;
+		last_op(*list)->nx = node;
 }
