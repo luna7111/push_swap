@@ -25,60 +25,33 @@ LIB 	:=	$(LIBFT)
 
 NAME 	:=	push_swap
 SRC 	:=	src/push_swap.c\
-			src/aux/error.c\
-			src/aux/math.c\
-			src/linked_lists/oplist/add.c\
-			src/linked_lists/oplist/clear.c\
-			src/linked_lists/oplist/print.c\
-			src/linked_lists/stacks/add_remove.c\
-			src/linked_lists/stacks/clear.c\
-			src/linked_lists/stacks/create_delete.c\
-			src/linked_lists/stacks/get_node.c\
-			src/linked_lists/stacks/indexize.c\
-			src/linked_lists/stacks/operations.c\
-			src/linked_lists/stacks/populate.c\
-			src/linked_lists/stacks/other.c\
-			src/sort/operations/push.c\
-			src/sort/operations/reverse_rotate.c\
-			src/sort/operations/rotate.c\
-			src/sort/operations/swap.c\
-			src/sort/sort.c\
-			src/sort/small_sort.c\
-			src/sort/big_sort.c
+			src/auxiliary/error.c\
+			src/auxiliary/math.c\
+			src/linked_list_implementation/oplist/add.c\
+			src/linked_list_implementation/oplist/clear.c\
+			src/linked_list_implementation/oplist/print.c\
+			src/linked_list_implementation/stacks/add_remove.c\
+			src/linked_list_implementation/stacks/clear.c\
+			src/linked_list_implementation/stacks/create_delete.c\
+			src/linked_list_implementation/stacks/get_node.c\
+			src/linked_list_implementation/stacks/indexize.c\
+			src/linked_list_implementation/stacks/operations.c\
+			src/linked_list_implementation/stacks/populate.c\
+			src/linked_list_implementation/stacks/other.c\
+			src/push_swap_stack_operations/push.c\
+			src/push_swap_stack_operations/reverse_rotate.c\
+			src/push_swap_stack_operations/rotate.c\
+			src/push_swap_stack_operations/swap.c\
+			src/sorting_algorithms/sort.c\
+			src/sorting_algorithms/small_sort.c\
+			src/sorting_algorithms/ksort.c
 OBJ		:=	$(SRC:.c=.o)
-
-#Bonus stuff
-
-BONUS_NAME	:=	checker
-BONUS_SRC	:=	src/checker/checker.c\
-				src/aux/error.c\
-				src/aux/math.c\
-				src/linked_lists/oplist/add.c\
-				src/linked_lists/oplist/clear.c\
-				src/linked_lists/oplist/print.c\
-				src/linked_lists/stacks/add_remove.c\
-				src/linked_lists/stacks/clear.c\
-				src/linked_lists/stacks/create_delete.c\
-				src/linked_lists/stacks/get_node.c\
-				src/linked_lists/stacks/indexize.c\
-				src/linked_lists/stacks/operations.c\
-				src/linked_lists/stacks/populate.c\
-				src/linked_lists/stacks/other.c\
-				src/sort/operations/push.c\
-				src/sort/operations/reverse_rotate.c\
-				src/sort/operations/rotate.c\
-				src/sort/operations/swap.c\
-				src/sort/sort.c\
-				src/sort/small_sort.c\
-				src/sort/big_sort.c
-BONUS_OBJ	:=	$(BONUS_SRC:.c=.o)
-
 
 #-----------------------------------------------------------------------------#
 #                                    Rules                                    #
 #-----------------------------------------------------------------------------#
 
-all: $(NAME) $(BONUS_NAME)
+all: $(NAME)
 
 $(LIBFT):
 	$(MAKE) -C libft
@@ -88,9 +61,6 @@ $(MLX):
 
 $(NAME): $(OBJ) $(LIBFT)
 	$(CC) $(CFLAGS) $(OBJ) $(LIB) -o $(NAME) 
-
-$(BONUS_NAME): $(BONUS_OBJ) $(LIBFT)
-	$(CC) $(CFLAGS) $(BONUS_OBJ) $(LIB) -o $(BONUS_NAME) 
 
 clean:
 	$(MAKE) -C libft fclean
