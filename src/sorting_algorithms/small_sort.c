@@ -16,7 +16,7 @@ void	sort_three(t_stack **st, t_oplst **oplst)
 {
 	if ((*st)->ind == 1 && (*st)->nx->ind == 2)
 		return ;
-	else if ((*st)->ind == 1 && (*st)->nx->ind == 3)
+	if ((*st)->ind == 1 && (*st)->nx->ind == 3)
 	{
 		o_sa(st, oplst);
 		o_ra(st, oplst);
